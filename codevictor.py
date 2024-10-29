@@ -60,3 +60,10 @@ def symetrieax0(piece):
 def symetrieax1(piece):
     symax1piece=piece[::-1][:]
     return symax1piece
+
+def toutessymetries(piece):
+    listesym=[piece]
+    listesym.append(symetrieax0(piece))
+    listesym.append(symetrieax1(piece))
+    listesym.append(symetrieax0(symetrieax1(piece)))
+    return listesym
