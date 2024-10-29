@@ -28,7 +28,7 @@ RAW_SHAPES = {
 }
 
 PENTOMINOS = [np.array(shape, dtype=DTYPE) for shape in RAW_SHAPES.values()]
-
+print (PENTOMINOS)
 
 # 0 means the spot is free; 1 means its not in the shape to fill
 
