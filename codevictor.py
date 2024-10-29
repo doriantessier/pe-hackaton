@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+"""
 data = np.random.randint(0, 13, size=(13, 13))
 
 # Types de couleur viridis/ plasma et création du damier
@@ -41,29 +41,39 @@ def enleve(piece,position,EDJ,numero):
         for j in range (len(piece[0])):
             if piece[i][j]==1:
                 EDJ[i + position[0]][j + position[1]]=0
+                
 
-"""def resolution(listepiece,EDJ):
+def resolutionalamano(listepiece,EDJ):
     numero=0
     listechoix=[]
+    #contient les choix sous la forme d'un tableau[numero, configuration entre 0 et 7, position]
     position=[0,0]
     while numero<len(listepiece-1):
+        configuration=0
+
         if position[1]=len(EDJ[0]):
             position[0]+=1
-        if position[]
-        piece=listepiece[numero]
-        if """
 
+        if position[0]>=len(EDJ):
+            listechoix[-1][]
+
+        piece=listepiece[numero]
+        if 
+"""
+piece= np.array([[1,1,1],[1]])
 def symetrieax0(piece):
     symax0piece=piece[:][::-1]
-    return symax0piece
+    return np.array(symax0piece)
 
 def symetrieax1(piece):
     symax1piece=piece[::-1][:]
-    return symax1piece
+    return np.array(symax1piece)
 
 def toutessymetries(piece):
     listesym=[piece]
-    listesym.append(symetrieax0(piece))
-    listesym.append(symetrieax1(piece))
+    listesym.append((symetrieax0(piece)))
+    listesym.append(nsymetrieax1(piece))
     listesym.append(symetrieax0(symetrieax1(piece)))
     return listesym
+
+print(symetrieax1(np.array([[1,1,1],[1]])) )
