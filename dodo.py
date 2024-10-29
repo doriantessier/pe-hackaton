@@ -38,7 +38,7 @@ def convert_shape_to_coordinates(shape):
 pentomino_list = [(idx, convert_shape_to_coordinates(shape)) for idx, shape in enumerate(RAW_SHAPES.values())]
 
 # Fonction déjà définie
-def generate_pentomino_positions(pentomino_idx, pentomino_shape, grid_shape=(6, 10)):
+def generate_pentomino_positions(pentomino_idx, pentomino_shape, grid_shape=(5, 12)):
     """
     Génère toutes les positions possibles d'un pentomino sur une grille et renvoie un tableau de 0 et 1
     où chaque ligne correspond à une configuration possible.
@@ -80,7 +80,7 @@ def generate_pentomino_positions(pentomino_idx, pentomino_shape, grid_shape=(6, 
     return np.array(possible_positions)
 
 # Générer toutes les positions pour les 12 pièces
-def generate_all_pentomino_positions(pentomino_list, grid_shape=(6, 10)):
+def generate_all_pentomino_positions(pentomino_list, grid_shape=(5, 12)):
     all_positions = []
     for pentomino_idx, pentomino_shape in pentomino_list:
         positions = generate_pentomino_positions(pentomino_idx, pentomino_shape, grid_shape)
@@ -93,7 +93,8 @@ output = generate_all_pentomino_positions(pentomino_list)
 
 # Afficher la forme du résultat
 print(output.shape)  # Affichera (nombre_total_de_positions, 72)
-#print(output[:5])  #Afficher les 5 premières configurations pour vérification
+print(output[:5])  #Afficher les 5 premières configurations pour vérification
 
 
-solution = xcover(output)
+solution = covers_bool(output)
+print(solution)
