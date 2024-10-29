@@ -8,9 +8,9 @@
 #           0 where there is just air
 
 import numpy as np
-import exact_cover
+#import exact_cover
 
-DTYPE = exact_cover.io.DTYPE_FOR_ARRAY
+#DTYPE = exact_cover.io.DTYPE_FOR_ARRAY
 
 RAW_SHAPES = {
     "F": [[1, 1, 0], [0, 1, 1], [0, 1, 0]],
