@@ -4,15 +4,15 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = np.random.randint(0, 13, size=(13, 13))
+# test de la repprésentation data = np.random.randint(0, 13, size=(13, 13))
 
 # Types de couleur viridis/ plasma et création du damier
 cmap = plt.cm.get_cmap('plasma', 13) 
 
 # Affichage du damier
-plt.imshow(data, cmap=cmap, interpolation='nearest')
-plt.title('Puzzle')
-plt.show()
+#plt.imshow(data, cmap=cmap, interpolation='nearest')
+#plt.title('Puzzle')
+p#lt.show()
 
 
 #on créé l'espace de jeu aka la grille
@@ -65,7 +65,7 @@ def resolutionalamano(listepiece,EDJ):
                         configuration=listechoix[-1][1]
                         position=listechoix[-1][2]
                         listechoix.pop()
-                
+#la résolution n'est pas aboutie, il faudrait retourner à l'étape du else pour revenir dans la boucle de rétroaction cependant je n'arrive pas à le coder          
 
 piece= np.array([[1,1,1],[1]])
 def symetrieax0(piece):
