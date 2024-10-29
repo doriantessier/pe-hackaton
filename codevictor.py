@@ -54,7 +54,7 @@ def resolutionalamano(listepiece,EDJ):
             listechoix.append([numero,configuration,position])
         else:
             position[1]+=1
-            if position[1]=len(EDJ[0]):
+            if position[1]==len(EDJ[0]):
                 position[0]+=1
                 position[1]=0
                 if position[0]>=len(EDJ):
@@ -79,7 +79,7 @@ def symetrieax1(piece):
 def toutessymetries(piece):
     listesym=[piece]
     listesym.append((symetrieax0(piece)))
-    listesym.append(nsymetrieax1(piece))
+    listesym.append(symetrieax1(piece))
     listesym.append(symetrieax0(symetrieax1(piece)))
     return listesym
 
