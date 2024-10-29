@@ -1,5 +1,7 @@
 import numpy as np
 from xcover import covers_bool
+from exact_cover_py import exact_covers
+
 
 # Dictionnaire de formes de pentominos (matrices)
 RAW_SHAPES = {
@@ -93,7 +95,6 @@ output = generate_all_pentomino_positions(pentomino_list)
 
 # Afficher la forme du résultat
 print(output.shape)  # Affichera (nombre_total_de_positions, 72)
-#print(output[:5])  #Afficher les 5 premières configurations pour vérification
+#print(output[:50])  #Afficher les 5 premières configurations pour vérification
 
-
-solution = xcover(output)
+print(list(exact_covers(output)))
