@@ -3,7 +3,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-"""
+
 data = np.random.randint(0, 13, size=(13, 13))
 
 # Types de couleur viridis/ plasma et création du damier
@@ -49,17 +49,24 @@ def resolutionalamano(listepiece,EDJ):
     #contient les choix sous la forme d'un tableau[numero, configuration entre 0 et 7, position]
     position=[0,0]
     while numero<len(listepiece-1):
-        configuration=0
+        if peut_placer(piece,position,EDJ,numero):
+            place(piece,position,EDJ,numero)
+            listechoix.append([numero,configuration,position])
+        else:
+            position[1]+=1
+            if position[1]=len(EDJ[0]):
+                position[0]+=1
+                position[1]=0
+                if position[0]>=len(EDJ):
+                    numero=listechoix[-1][0]
+                    configuration=listechoix[-1][1]+1
+                    if configuration==8:
+                        numero-=1
+                        configuration=listechoix[-1][1]
+                        position=listechoix[-1][2]
+                        listechoix.pop()
+                
 
-        if position[1]=len(EDJ[0]):
-            position[0]+=1
-
-        if position[0]>=len(EDJ):
-            listechoix[-1][]
-
-        piece=listepiece[numero]
-        if 
-"""
 piece= np.array([[1,1,1],[1]])
 def symetrieax0(piece):
     symax0piece=piece[:][::-1]
